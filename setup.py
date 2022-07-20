@@ -17,7 +17,13 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     package_data={
+        "ivete.deploy": [
+            "templates/*/*.html",
+            "templates/*/js/*.js",
+            "templates/*/css/*.css"
+        ]
     },
+    zip_safe=True,
     install_requires=requirements(),
     classifiers=[
         "Programming Language :: Python :: 3.7",

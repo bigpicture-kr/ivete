@@ -1,12 +1,21 @@
 from .arguments import DeployArguments
 
-def deploy(inference, api_name, template_name, template_path=None):
+def deploy(inference, api_name, template_name="default", template_path=None):
     import os
     from flask import Flask, Blueprint, request, jsonify, render_template
     from flask_cors import CORS
     from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
-    template_folder = os.path.join(template_path, template_name)
+    if template_path is not None:
+        template_folder = os.path.join(template_path, template_name)
+    else:
+        template_folder = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "templates",
+            template_name,
+        )
+    print(template_folder)
+
     bp = Blueprint(
         api_name,
         __name__,
