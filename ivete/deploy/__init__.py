@@ -14,7 +14,6 @@ def deploy(inference, api_name, template_name="default", template_path=None):
             "templates",
             template_name,
         )
-    print(template_folder)
 
     bp = Blueprint(
         api_name,
