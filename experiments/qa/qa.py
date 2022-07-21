@@ -57,6 +57,7 @@ def inference(question, context):
         'question': question,
         'context': context,
         'answer': pred_text,
+        'output': pred_text,
     }
 
 app = deploy(

@@ -39,17 +39,17 @@ def deploy(inference, api_name, template_name="default", template_path=None):
 
     @bp.route("/api", methods=["POST"])
     def api():
-        input = request.json
+        input = request.form
         data = inference(**input)
         response = jsonify(data)
         return response
 
     @bp.route("/datalist", methods=["GET"])
     def datalist():
-        # Remove this after development
+        # TO DO: Construct datalist as input arguments of the model
         datalist = [
-            {"name": "param1", "type": "str"},
-            {"name": "param2", "type": "str"},
+            {"name": "context", "type": "str"},
+            {"name": "question", "type": "str"},
         ]
         response = jsonify(datalist)
         return response
