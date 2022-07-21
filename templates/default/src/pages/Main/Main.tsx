@@ -52,7 +52,7 @@ const Main = () => {
         {datalist.map(item =>
           <div key={item.name}>
             <label htmlFor={item.name}>{item.name}: </label>
-            <input id={item.name} name={item.name} type="text" />
+            <input id={item.name} name={item.name} type={item.type} />
           </div>
         )}
         <button type="submit">Submit</button>

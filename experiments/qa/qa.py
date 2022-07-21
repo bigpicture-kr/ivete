@@ -30,7 +30,7 @@ tokenizer = BertTokenizer.from_pretrained(
     do_lower_case=False,
 )
 
-def inference(question, context):
+def inference(question: str, context: str):
     if question and context:
         truncated_query = tokenizer.encode(
             question,

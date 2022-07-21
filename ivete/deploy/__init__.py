@@ -46,11 +46,8 @@ def deploy(inference, api_name, template_name="default", template_path=None):
 
     @bp.route("/datalist", methods=["GET"])
     def datalist():
-        # TO DO: Construct datalist as input arguments of the model
-        datalist = [
-            {"name": "context", "type": "str"},
-            {"name": "question", "type": "str"},
-        ]
+        argnames = inference.__code__.co_varnames[:inference.__code__.co_argcount]
+        datalist = [{"name": arg, "type": "text"} for arg in argnames]
         response = jsonify(datalist)
         return response
 
