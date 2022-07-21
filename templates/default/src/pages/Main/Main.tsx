@@ -8,6 +8,7 @@ const Main = () => {
   const [output, setOutput] = useState<string>("");
 
   useEffect(() => {
+    // Load datalist to be input to the model
     const request = {
       url: URL_DATALIST,
       method: "GET",
@@ -25,6 +26,7 @@ const Main = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // Run inference via REST API
     const formData = new FormData(event.currentTarget);
     const request = {
       url: URL_API,
@@ -45,6 +47,7 @@ const Main = () => {
     <Styled.Container>
       <h1>Input inference parameters</h1>
 
+      {/* Input of the model */}
       <form onSubmit={handleSubmit}>
         {datalist.map(item =>
           <div key={item.name}>
@@ -55,6 +58,7 @@ const Main = () => {
         <button type="submit">Submit</button>
       </form>
 
+      {/* Output of the model */}
       {output.length > 0 &&
         <div>
           <h1>Inference result:</h1>
