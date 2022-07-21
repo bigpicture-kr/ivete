@@ -2,7 +2,7 @@ from .arguments import DeployArguments
 
 def deploy(inference, api_name, template_name="default", template_path=None):
     import os
-    from flask import Flask, Blueprint, request, jsonify, render_template
+    from flask import Flask, Blueprint, request, jsonify, render_template, send_file
     from flask_cors import CORS
     from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
@@ -19,11 +19,23 @@ def deploy(inference, api_name, template_name="default", template_path=None):
         api_name,
         __name__,
         template_folder=template_folder,
+        static_folder=os.path.join(template_folder, "static/js"),
+        static_url_path="/static/js",
     )
     
     @bp.route("/")
     def index():
         return render_template("index.html")
+
+    @bp.route("/manifest.json")
+    def manifest():
+        file_path = os.path.join(template_folder, "manifest.json")
+        return send_file(file_path)
+
+    @bp.route("/favicon.ico")
+    def favicon():
+        file_path = os.path.join(template_folder, "favicon.ico")
+        return send_file(file_path)
 
     @bp.route("/api", methods=["POST"])
     def api():
@@ -33,7 +45,7 @@ def deploy(inference, api_name, template_name="default", template_path=None):
         return response
 
     app = Flask(__name__)
-    app.register_blueprint(bp, url_prefix=f"/{api_name}")
+    app.register_blueprint(bp)
     CORS(app)
 
     return app
