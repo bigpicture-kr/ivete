@@ -5,6 +5,15 @@ def requirements():
     with open(os.path.join(os.path.dirname(__file__), "requirements.txt"), encoding="utf-8") as f:
         return f.read().splitlines()
 
+def package_files(directory):
+    paths = []
+    print(list(os.walk(directory)))
+    for (path, directories, filenames) in os.walk(directory):
+        for filename in filenames:
+            paths.append(os.path.join("..", path, filename))
+    print(paths)
+    return paths
+
 setuptools.setup(
     name="ivete",
     version="1.0.0",
@@ -17,11 +26,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     package_data={
-        "ivete.deploy": [
-            "templates/*/*.html",
-            "templates/*/js/*.js",
-            "templates/*/css/*.css"
-        ]
+        "": package_files("ivete/deploy/templates")
     },
     zip_safe=True,
     install_requires=requirements(),
