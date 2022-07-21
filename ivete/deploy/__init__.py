@@ -44,6 +44,16 @@ def deploy(inference, api_name, template_name="default", template_path=None):
         response = jsonify(data)
         return response
 
+    @bp.route("/datalist", methods=["GET"])
+    def datalist():
+        # Remove this after development
+        datalist = [
+            {"name": "param1", "type": "str"},
+            {"name": "param2", "type": "str"},
+        ]
+        response = jsonify(datalist)
+        return response
+
     app = Flask(__name__)
     app.register_blueprint(bp)
     CORS(app)
