@@ -1,10 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { TopNav } from "./components/common";
+import * as Screen from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <p>ivete is running</p>
-    </div>
+    <BrowserRouter>
+      <TopNav />
+      <Routes>
+        <Route path="/" element={<Screen.Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
