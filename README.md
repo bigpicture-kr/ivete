@@ -42,9 +42,9 @@ from transformers import BertConfig, BertForQuestionAnswering, BertTokenizer
 from ivete.deploy import DeployArguments, deploy
 ```
 
-#### Step 3. Set up deploy arguments
+#### Step 3. Set up deployment arguments
 
-Set arguments for deploy. Each argument is as follows.
+Set arguments for deployment. Each argument is as follows.
 
 - `pretrained_model_name` - The name of the model pretrained using Transformers. The model will be loaded automatically from [Hugging Face](https://huggingface.co).
 - `downstream_model_path` - The path where the fine-tuned model is located to perform the downstream task. The latest version of the checkpoint files with .ckpt extension located in that path will be loaded.
