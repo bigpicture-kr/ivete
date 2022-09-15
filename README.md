@@ -110,7 +110,7 @@ Execute as a web tool with arguments for deployment. The web server runs with Fl
 
 - `inference` - Inference method implemented in the previous step.
 - `api_name` - API prefix for web server.
-- `template_name` - The name of the web frontend template. The default value is `default`. It has only a simple input and output box.
+- `template_name` - The name of the web frontend template. The default value is `default`. It has only a simple input and output box in `default` template.
 - `template_path` - The path where the web frontend template is located. If it is stored in `templates/{template_name}`, no need to specify this.
 
 ```python
