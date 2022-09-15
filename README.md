@@ -46,9 +46,9 @@ from ivete.deploy import DeployArguments, deploy
 
 Set arguments for deploy. Each argument is as follows.
 
-- **pretrained_model_name** - The name of the model pretrained using Transformers. The model will be loaded automatically from [Hugging Face](https://huggingface.co).
-- **downstream_model_path** - The path where the fine-tuned model is located to perform the downstream task. The latest version of the checkpoint files with .ckpt extension located in that path will be loaded.
-- **inference_args** - Other arguments required for model inference. Make it the same as set during train.
+- `pretrained_model_name` - The name of the model pretrained using Transformers. The model will be loaded automatically from [Hugging Face](https://huggingface.co).
+- `downstream_model_path` - The path where the fine-tuned model is located to perform the downstream task. The latest version of the checkpoint files with .ckpt extension located in that path will be loaded.
+- `inference_args` - Other arguments required for model inference. Make it the same as set during train.
 
 ```python
 args = DeployArguments(
@@ -63,7 +63,7 @@ args = DeployArguments(
 
 #### Step 4. Load the model and configurations
 
-Load the configurations of the pretrained model and checkpoints of the fine-tuned model. You can set which device - CPU or GPU to infer with the **map_location** argument.
+Load the configurations of the pretrained model and checkpoints of the fine-tuned model. You can set which device - CPU or GPU to infer with the `map_location` argument.
 
 ```python
 pretrained_model_config = BertConfig.from_pretrained(
@@ -108,10 +108,10 @@ For a full example of the inference method, see [examples/qa/qa.py](https://gith
 
 Execute as a web tool with arguments for deployment. The web server runs with Flask. The descriptions of deployment arguments are as follows.
 
-- **inference** - Inference method implemented in the previous step.
-- **api_name** - API prefix for web server.
-- **template_name** - The name of the web frontend template. The default value is `default`. It has only a simple input and output box.
-- **template_path** - The path where the web frontend template is located. If it is stored in `templates/{template_name}`, no need to specify this.
+- `inference` - Inference method implemented in the previous step.
+- `api_name` - API prefix for web server.
+- `template_name` - The name of the web frontend template. The default value is `default`. It has only a simple input and output box.
+- `template_path` - The path where the web frontend template is located. If it is stored in `templates/{template_name}`, no need to specify this.
 
 ```python
 app = deploy(
