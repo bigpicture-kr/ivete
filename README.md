@@ -28,9 +28,9 @@ The steps below are the same as the Q&A examples.
 
 #### Step 1. Train model
 
-Ivete requires a checkpoint file of the trained model to run. It doesn't provide features for model training. Therefore, you need to train model using a different framework. It doesn't matter which framework is used to train.
+Ivete requires a checkpoint file of the trained model to run. It doesn't provide features for model training. Therefore, you need to train model using a different framework.
 
-It is recommended to use the [🧐MiNSU](https://github.com/bigpicture-kr/MiNSU) to train model.
+It is recommended to use the [🧐MiNSU](https://github.com/bigpicture-kr/MiNSU) to train model. But doesn't matter which framework is used to train.
 
 #### Step 2. Import python libraries
 
