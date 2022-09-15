@@ -11,7 +11,7 @@ pip install git+https://github.com/bigpicture-kr/ivete.git
 
 ### To install
 
-No third party libraries required to inference.
+No third party libraries required to install.
 
 ### To inference
 
@@ -24,7 +24,7 @@ No third party libraries required to inference.
 
 There are two examples of inferring Q&A tasks through ivete in Jupyter Notebook and Python script.
 
-- in Jupyter Notebook - [examples/qa/qa.ipynb](https://github.com/bigpicture-kr/ivete/blob/main/experiments/qa/qa.ipynb)
-- in Python script - [examples/qa/qa.py](https://github.com/bigpicture-kr/ivete/blob/main/experiments/qa/qa.py)
+- in Jupyter Notebook - [examples/qa/qa.ipynb](https://github.com/bigpicture-kr/ivete/blob/main/examples/qa/qa.ipynb)
+- in Python script - [examples/qa/qa.py](https://github.com/bigpicture-kr/ivete/blob/main/examples/qa/qa.py)
 
 ### Build web template
