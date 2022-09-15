@@ -4,7 +4,7 @@ End-to-Inference Machine Learning Framework
 ## Install
 
 ```bash
-pip install git+https://github.com/bigpicture-kr/MiNSU.git
+pip install git+https://github.com/bigpicture-kr/ivete.git
 ```
 
 ## Requirements
